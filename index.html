@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title -->
+    <title>AirLines | Safety & Fleet</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Internal Styles -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Mulish", sans-serif;
+      }
+
+      body {
+        background-color: #ffffff;
+      }
+      @keyframes border {
+        to {
+          color: #004c99;
+          font-size: 20px;
+          border-bottom: 2px solid #004c99;
+        }
+      }
+
+      /* Navbar Section */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #002b5b;
+        color: white;
+        position: fixed;
+        top: 0;
+        padding: 10px 30px;
+        width: 100%;
+        font-weight: 600;
+      }
+
+      .menu a {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        margin-left: 15px;
+        transition: 0.3s ease-in;
+      }
+
+      .menu a:hover {
+        color: #004c99;
+        font-size: 20px;
+        border-bottom: 2px solid #004c99;
+      }
+
+      /* Home Section */
+      .Home {
+        background-image: url(back.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+      }
+
+      .intro .text {
+        width: 500px;
+        padding: 30px;
+        font-size: 25px;
+        color: #002b5b;
+        position: relative;
+        top: 10rem;
+        left: 5rem;
+      }
+
+      .text button {
+        background: linear-gradient(45deg, #007bff, #002b5b);
+        color: white;
+        padding: 10px 25px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        margin-top: 50px;
+      }
+
+      .text button:hover {
+        border: 2px solid black;
+        box-shadow: 2px 3px 4px black;
+      }
+      /* form section*/
+      .hi {
+        display: flex;
+        justify-content: center;
+
+        height: auto;
+      }
+      .form {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 350px;
+        margin-top: 90px;
+        background-color: #f0f0f0;
+        color: #002b5b;
+      }
+      .form button {
+        width: 100px;
+        background: linear-gradient(45deg, #007bff, #002b5b);
+        position: relative;
+        color: white;
+        left: 200px;
+
+        padding: 5px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+      .form button:hover {
+        border: 2px solid black;
+        box-shadow: 2px 3px 4px black;
+      }
+      .details {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .details input {
+        padding: 3px;
+        border-radius: 5px;
+        outline: none;
+      }
+
+      /* Aircraft Section */
+      .aircraft {
+        padding: 60px 30px;
+      }
+
+      .aircraft h1 {
+        margin-bottom: 30px;
+        color: #002b5b;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        justify-content: space-evenly;
+      }
+
+      .box {
+        background-color: #f0f0f0;
+        border-radius: 20px;
+        padding: 20px;
+        line-height: 1.5;
+        text-align: center;
+        color: #002b5b;
+      }
+      .box:hover {
+        transform: translateY(-10px);
+      }
+
+      .box img {
+        height: 200px;
+        max-width: 100%;
+        border-radius: 20px;
+        margin-bottom: 15px;
+      }
+
+      .box button {
+        margin-top: 20px;
+        background: linear-gradient(45deg, #007bff, #002b5b);
+        color: white;
+        border-radius: 10px;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+      }
+
+      .box button:hover {
+        border: 2px solid black;
+        box-shadow: 2px 3px 4px black;
+      }
+
+      /* Safety Section */
+      .safety header {
+        text-align: center;
+        padding: 60px 20px 30px;
+        background-color: #ffffffb8;
+        backdrop-filter: blur(10px);
+      }
+
+      .safety header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      .safety header p {
+        font-size: 1.1rem;
+        color: #1565c0;
+      }
+
+      .safety .s {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px 30px;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .safety h2 {
+        color: #0d47a1;
+        border-left: 5px solid #42a5f5;
+        padding-left: 10px;
+        margin-bottom: 10px;
+      }
+
+      .safety ul {
+        margin-top: 10px;
+        line-height: 1.8;
+      }
+
+      .highlight {
+        color: #1565c0;
+        font-weight: 600;
+      }
+      /*contact section*/
+      .contact {
+        height: 100vh;
+        margin-top: 50px;
+      }
+      .contact form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+        margin-top: 50px;
+      }
+      .contact h1 {
+        color: #0d47a1;
+        display: flex;
+        justify-content: center;
+      }
+
+      .contact input,
+      .contact textarea {
+        width: 100%;
+        color: #0d47a1;
+        padding: 18px;
+        border-radius: 10px;
+
+        outline: none;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+      }
+
+      .contact input:focus,
+      .contact textarea:focus {
+        border-color: var(--primary-color);
+      }
+
+      .contact textarea {
+        height: 150px;
+        resize: vertical;
+      }
+
+      .contact form button {
+        border: 2px solid black;
+        background: linear-gradient(45deg, #007bff, #002b5b);
+        color: white;
+        border-radius: 25px;
+        padding: 15px 50px;
+        font-size: 18px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .contact form button:hover {
+        border: 2px solid black;
+        box-shadow: 2px 3px 4px black;
+      }
+      /* footer section*/
+      .footer {
+        height: 300px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 20px 0px;
+        background-color: #0d47a1;
+      }
+      .icons a {
+        display: inline-block;
+        background-color: black;
+        color: white;
+        width: 40px;
+        height: 40px;
+        margin-top: 20px;
+        border-radius: 50%;
+        line-height: 40px;
+        font-size: 18px;
+        transition: 0.2s ease-in;
+        box-shadow: 0.3px 8px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      .icons a:hover {
+        background: #00a9ff;
+        color: white;
+        transform: scale(1.4);
+        transform: translatey(-10px);
+      }
+      .footer p {
+        margin-top: 50px;
+      }
+      .menus {
+        margin-top: 30px;
+      }
+      .menus a {
+        text-decoration: none;
+        font-size: 18px;
+        margin-left: 10px;
+        font-weight: 600;
+        color: white;
+      }
+      .menus a:hover {
+        color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Home Section -->
+      <section class="Home" id="home">
+        <div class="navbar">
+          <h1>AirLines</h1>
+          <div class="menu">
+            <a href="#Home">Home</a>
+            <a href="#Air">Aircraft</a>
+            <a href="#safety">Safety</a>
+            <a href="#">Charters</a>
+            <a href="#contact">Contact Us</a>
+          </div>
+        </div>
+
+        <section class="intro">
+          <div class="text">
+            <h1>Discover & Book Perfect Flight Today</h1>
+            <h6 style="color: black; margin-top: 10px">
+              Simple Booking and Easy Savings
+            </h6>
+            <a href="#form"> <button>Book Now</button> </a>
+          </div>
+        </section>
+      </section>
+      <div class="hi" id="form">
+        <section class="form">
+          <h1>Your Flight Planner</h1>
+          <div class="radio" style="margin-top: 20px">
+            <input type="radio" name="r" />
+            <label for="">Round trip</label>
+            <input type="radio" name="r" />
+            <label for="">Emothy-leg</label>
+            <br />
+            <input type="radio" name="r" />
+            <label for="">One way</label>
+            <input type="radio" name="r" style="margin-left: 10px" />
+            <label for="">Multi-leg</label>
+          </div>
+          <div class="details">
+            <label for="">Leaving From:</label>
+            <input type="text" />
+            <label for="">Going to:</label>
+            <input type="text" />
+            <label for="">Depature Date</label>
+            <input type="date" />
+            <label for="">Time</label>
+            <input type="time" />
+            <label for="">Return Date</label>
+            <input type="text" />
+            <label for="">Passengers</label>
+            <input type="number" />
+          </div>
+          <button>Find</button>
+        </section>
+      </div>
+
+      <!-- Aircraft Section -->
+      <section class="aircraft" id="Air">
+        <h1>Our Aircrafts</h1>
+        <div class="grid">
+          <div class="box">
+            <img src="air-india.jpg" alt="Air India Aircraft" />
+            <h2>AIR INDIA</h2>
+            <h3>Air India A320</h3>
+            <h4>Number of Fleet: 155</h4>
+            <h4>Total Passengers: 190</h4>
+            <button>Book</button>
+          </div>
+
+          <div class="box">
+            <img src="airvistaracom.jpg" alt="Air Vistara Aircraft" />
+            <h2>AIR VISTARACOM</h2>
+            <h3>Airline A320</h3>
+            <h4>Number of Fleet: 160</h4>
+            <h4>Total Passengers: 200</h4>
+            <button>Book</button>
+          </div>
+
+          <div class="box">
+            <img src="Akasa-Air.jpg" alt="Akasa Air Aircraft" />
+            <h2>AKASA AIR</h2>
+            <h3>Airline B4040</h3>
+            <h4>Number of Fleet: 140</h4>
+            <h4>Total Passengers: 160</h4>
+            <button>Book</button>
+          </div>
+
+          <div class="box">
+            <img src="images (1).jpeg" alt="Air India Aircraft" />
+            <h2>AIR INDIA</h2>
+            <h3>Airline A20</h3>
+            <h4>Number of Fleet: 180</h4>
+            <h4>Total Passengers: 200</h4>
+            <button>Book</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Safety Section -->
+      <section class="safety" id="safety">
+        <header>
+          <h1>Safety First, Always</h1>
+          <p>
+            Your well-being is our highest priority — on every flight, every
+            time.
+          </p>
+        </header>
+
+        <section class="s">
+          <h2>Our Safety Commitment</h2>
+          <p>
+            At <span class="highlight">SkyWings Airlines</span>, passenger and
+            crew safety is at the heart of everything we do. Our aircraft
+            undergo rigorous checks before every flight, and our crew members
+            are trained to handle any situation with professionalism and care.
+          </p>
+        </section>
+
+        <section class="s">
+          <h2>Pre-Flight Safety Checks</h2>
+          <ul>
+            <li>
+              Daily maintenance and safety inspections by certified engineers.
+            </li>
+            <li>
+              Comprehensive aircraft system diagnostics before each flight.
+            </li>
+            <li>
+              Real-time weather and air traffic monitoring for route
+              adjustments.
+            </li>
+            <li>Strict adherence to aviation authority safety standards.</li>
+          </ul>
+        </section>
+
+        <section class="s">
+          <h2>In-Flight Safety Measures</h2>
+          <ul>
+            <li>Mandatory seatbelt signs and turbulence alerts.</li>
+            <li>Emergency equipment checked and serviced regularly.</li>
+            <li>Cabin crew trained for medical and evacuation procedures.</li>
+            <li>
+              Advanced air filtration ensuring clean, fresh cabin air throughout
+              the journey.
+            </li>
+          </ul>
+        </section>
+
+        <section class="s">
+          <h2>COVID-19 & Health Precautions</h2>
+          <ul>
+            <li>
+              Regular sanitization of all aircraft surfaces and touchpoints.
+            </li>
+            <li>HEPA filters that remove 99.97% of airborne particles.</li>
+            <li>Contactless check-in and boarding process for added safety.</li>
+            <li>Availability of sanitizers and masks on all flights.</li>
+          </ul>
+        </section>
+
+        <section class="s">
+          <h2>Our Safety Team</h2>
+          <p>
+            Our safety department works 24/7, monitoring operations, reviewing
+            procedures, and implementing the latest aviation safety innovations.
+            Every pilot, engineer, and attendant is part of our commitment to a
+            <span class="highlight">Zero Incident Policy</span>.
+          </p>
+        </section>
+      </section>
+      <section class="contact" id="contact">
+        <h1 class="section-title">Get in Touch</h1>
+        <form>
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <input type="tel" placeholder="Your Phone" required />
+          <textarea placeholder="Your message......" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+      <section class="footer" id="footer">
+        <div class="icons">
+          <a href="">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+          <a href="">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </div>
+        <div class="menus">
+          <a href="#home">Home</a>
+          <a href="#Air">Aircraft</a>
+          <a href="#safety">Safety</a>
+          <a href="">Charters</a>
+          <a href="#contact">Contact Us</a>
+        </div>
+        <p>
+          <i class="bi bi-c-circle"></i>2025 AirLines.All right Reserved
+          <br />@copyright
+        </p>
+      </section>
+    </div>
+  </body>
+</html>
